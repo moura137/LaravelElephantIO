@@ -1,6 +1,9 @@
 Laravel Elephant IO
 ===================
 
+[![Build Status](https://travis-ci.org/moura137/LaravelElephantIO.svg?branch=master)](https://travis-ci.org/moura137/LaravelElephantIO)
+[![Coverage Status](https://coveralls.io/repos/moura137/LaravelElephantIO/badge.png)](https://coveralls.io/r/moura137/LaravelElephantIO)
+
 This is a service provider for the Laravel PHP Framework, it provides access to socket.io via ElephantIO. [http://elephant.io](http://elephant.io)
 
 ### Installation
@@ -8,7 +11,7 @@ This is a service provider for the Laravel PHP Framework, it provides access to 
 - [API on Packagist](https://packagist.org/packages/moura137/laravel-elephantio)
 - [API on GitHub](https://github.com/moura137/LaravelElephantIO)
 
-In the `require` key of `composer.json` file add the following
+In the `require` key of `composer.json` file add the followinghttps://travis-ci.org/moura137/LaravelElephantIO.svg?branch=master
 
     "moura137/laravel-elephantio": "dev-master"
 
