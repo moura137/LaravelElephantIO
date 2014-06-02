@@ -1,0 +1,18 @@
+/vendor
+/build
+composer.lock
+composer.phar
+
+# OS generated files #
+*~
+._*
+.~lock.*
+*.tmp
+*.swp
+
+.buildpath
+.project
+.settings
+
+Thumbs.db
+_notes/
