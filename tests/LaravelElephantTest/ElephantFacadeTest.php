@@ -3,7 +3,7 @@ namespace LaravelElephantTest;
 
 use PHPUnit_Framework_TestCase;
 use ReflectionClass;
-use LaravelElephant\ElephantFacade;
+use Moura137\LaravelElephant\ElephantFacade;
 
 class ElephantFacadeTest extends PHPUnit_Framework_TestCase
 {
@@ -21,6 +21,6 @@ class ElephantFacadeTest extends PHPUnit_Framework_TestCase
 
     	$return = $this->callProtectedMethod($object, 'getFacadeAccessor');
 	    
-	    $this->assertEquals('laravel.elephant', $return);
+	    $this->assertEquals('laravel.elephantio', $return);
     }
 }

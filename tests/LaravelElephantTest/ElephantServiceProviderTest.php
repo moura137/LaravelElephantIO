@@ -3,8 +3,8 @@ namespace LaravelElephantTest;
 
 use Mockery as m;
 use PHPUnit_Framework_TestCase;
-use LaravelElephant\ElephantServiceProvider;
-use LaravelElephant\LaraElephantIO;
+use Moura137\LaravelElephant\ElephantServiceProvider;
+use Moura137\LaravelElephant\LaraElephantIO;
 
 class ElephantServiceProviderTest extends PHPUnit_Framework_TestCase
 {
@@ -15,7 +15,7 @@ class ElephantServiceProviderTest extends PHPUnit_Framework_TestCase
     
     public function testShouldBoot()
     {
-        $sp = m::mock('LaravelElephant\ElephantServiceProvider[package]');
+        $sp = m::mock('Moura137\LaravelElephant\ElephantServiceProvider[package]');
         $sp->shouldReceive('package')
            ->once()
            ->with('moura137/laravel-elephantio')
@@ -34,9 +34,9 @@ class ElephantServiceProviderTest extends PHPUnit_Framework_TestCase
         $debug = true;
 
         $config = m::mock('Illuminate\Config\Repository');
-        $config->shouldReceive('config')
+        $config->shouldReceive('get')
                ->once()
-               ->with('laravel-elephant::config')
+               ->with('laravel-elephantio::config')
                ->andReturn(array('url' => $url, 'port' => $port, 'debug' => $debug));
 
         $elephant = m::mock('ElephantIO\Client');
@@ -64,7 +64,7 @@ class ElephantServiceProviderTest extends PHPUnit_Framework_TestCase
 
         $sp = new ElephantServiceProvider($app);
         
-        $app->shouldReceive('share')
+        $app->shouldReceive('bind')
             ->once()
             ->andReturnUsing(
                 // Make sure that the commands are being registered
@@ -86,7 +86,7 @@ class ElephantServiceProviderTest extends PHPUnit_Framework_TestCase
                 // object.
                 function ($name, $closure) use ($test, $app, $elephant) {
 
-                    $shouldBe = ['laravel.elephant' => 'LaravelElephant\LaraElephantIO'];
+                    $shouldBe = ['laravel.elephantio' => 'Moura137\LaravelElephant\LaraElephantIO'];
                         $test->assertInstanceOf($shouldBe[$name], $closure($app));
                 }
             );

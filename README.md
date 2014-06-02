@@ -19,7 +19,7 @@ Run the Composer update comand
 
     $ composer update
 
-In your `config/app.php` add `'LaravelElephant\ElephantServiceProvider'` to the end of the `$providers`Erray
+In your `config/app.php` add `'Moura137\LaravelElephant\ElephantServiceProvider'` to the end of the `$providers`Erray
 
 ```php
 'providers' => array(
@@ -27,12 +27,12 @@ In your `config/app.php` add `'LaravelElephant\ElephantServiceProvider'` to the 
     'Illuminate\Foundation\Providers\ArtisanServiceProvider',
     'Illuminate\Auth\AuthServiceProvider',
     ...
-    'LaravelElephant\ElephantServiceProvider',
+    'Moura137\LaravelElephant\ElephantServiceProvider',
 
 ),
 ```
 
-At the end of `config/app.php` add `'Elephant'    => 'LaravelElephant\ElephantFacade'` to the `$aliases` array
+At the end of `config/app.php` add `'Elephant'    => 'Moura137\LaravelElephant\ElephantFacade'` to the `$aliases` array
 
 ```php
 'aliases' => array(
@@ -40,7 +40,7 @@ At the end of `config/app.php` add `'Elephant'    => 'LaravelElephant\ElephantFa
     'App'        => 'Illuminate\Support\Facades\App',
     'Artisan'    => 'Illuminate\Support\Facades\Artisan',
     ...
-    'Elephant'    => 'LaravelElephant\ElephantFacade',
+    'Elephant'    => 'Moura137\LaravelElephant\ElephantFacade',
 
 ),
 ```

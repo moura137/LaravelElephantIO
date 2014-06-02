@@ -1,7 +1,7 @@
 <?php
-namespace LaravelElephant;
+namespace Moura137\LaravelElephant;
 
-use \ElephantIO\Client as ElephantIO;
+use ElephantIO\Client as ElephantIO;
 
 class LaraElephantIO
 {

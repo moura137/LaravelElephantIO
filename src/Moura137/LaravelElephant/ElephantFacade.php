@@ -1,5 +1,5 @@
 <?php
-namespace LaravelElephant;
+namespace Moura137\LaravelElephant;
 
 use Illuminate\Support\Facades\Facade as BaseFacade;
 
@@ -7,6 +7,6 @@ class ElephantFacade extends BaseFacade
 {
     protected static function getFacadeAccessor()
     {
-        return 'laravel.elephant';
+        return 'laravel.elephantio';
     }
 }

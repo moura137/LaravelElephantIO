@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-0": {
-            "LaravelElephant": "src/"
+            "Moura137": "src/"
         }
     }
 }
