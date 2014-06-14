@@ -15,7 +15,7 @@ This is a service provider for the Laravel PHP Framework, it provides access to 
 
 In the `require` key of `composer.json` file add the followinghttps://travis-ci.org/moura137/LaravelElephantIO.svg?branch=master
 
-    "moura137/laravel-elephantio": "dev-master"
+    "moura137/laravel-elephantio": "~0.1"
 
 Run the Composer update comand
 

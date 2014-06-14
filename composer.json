@@ -19,6 +19,11 @@
         "psr-0": {
             "Moura137": "src/"
         }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.2-dev"
+        }
     }
 }
 
