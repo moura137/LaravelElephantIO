@@ -2,6 +2,7 @@
 namespace Moura137\LaravelElephant;
 
 use ElephantIO\Client;
+use ElephantIO\Engine\SocketIO\Version1X;
 use Moura137\LaravelElephant\LaraElephantIO;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
@@ -36,7 +37,9 @@ class ElephantServiceProvider extends BaseServiceProvider
                 $address .= ':' . $port;
             }
 
-            return new Client($address, 'socket.io', 1, false, true, $config['debug']);
+            $options = array('debug' => $config['debug']);
+
+            return new Client(new Version1X($address, $options));
         });
 
         $this->app->bind('laravel.elephantio', function($app){

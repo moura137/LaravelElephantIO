@@ -1,9 +1,9 @@
 Laravel Elephant IO
 ===================
 
-[![Build Status](https://travis-ci.org/moura137/LaravelElephantIO.svg?branch=master)](https://travis-ci.org/moura137/LaravelElephantIO)
-[![Coverage Status](https://coveralls.io/repos/moura137/LaravelElephantIO/badge.png?branch=master)](https://coveralls.io/r/moura137/LaravelElephantIO?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/moura137/LaravelElephantIO/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/moura137/LaravelElephantIO/?branch=master)
+[![Build Status](https://travis-ci.org/moura137/LaravelElephantIO.svg?branch=refacto-1.0)](https://travis-ci.org/moura137/LaravelElephantIO)
+[![Coverage Status](https://coveralls.io/repos/moura137/LaravelElephantIO/badge.png?branch=refacto-1.0)](https://coveralls.io/r/moura137/LaravelElephantIO?branch=refacto-1.0)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/moura137/LaravelElephantIO/badges/quality-score.png?b=refacto-1.0)](https://scrutinizer-ci.com/g/moura137/LaravelElephantIO/?branch=refacto-1.0)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/2eeba11e-5120-4f35-b80e-970798ed3a43/mini.png)](https://insight.sensiolabs.com/projects/2eeba11e-5120-4f35-b80e-970798ed3a43)
 
 This is a service provider for the Laravel PHP Framework, it provides access to socket.io via ElephantIO. [http://elephant.io](http://elephant.io)
@@ -15,7 +15,7 @@ This is a service provider for the Laravel PHP Framework, it provides access to 
 
 In the `require` key of `composer.json` file add the following
 
-    "moura137/laravel-elephantio": "~0.1"
+    "moura137/laravel-elephantio": "~1.0"
 
 Run the Composer update comand
 
