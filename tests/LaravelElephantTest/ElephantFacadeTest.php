@@ -20,7 +20,7 @@ class ElephantFacadeTest extends PHPUnit_Framework_TestCase
     	$object = new ElephantFacade;
 
     	$return = $this->callProtectedMethod($object, 'getFacadeAccessor');
-	    
+
 	    $this->assertEquals('laravel.elephantio', $return);
     }
 }

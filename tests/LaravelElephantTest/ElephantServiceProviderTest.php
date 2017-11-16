@@ -12,19 +12,8 @@ class ElephantServiceProviderTest extends PHPUnit_Framework_TestCase
     {
         m::close();
     }
-    
-    public function testShouldBoot()
-    {
-        $sp = m::mock('Moura137\LaravelElephant\ElephantServiceProvider[package]');
-        $sp->shouldReceive('package')
-           ->once()
-           ->with('moura137/laravel-elephantio')
-           ->andReturn(true);
-           
-        $sp ->boot();
-    }
 
-	public function testShouldRegister()
+    public function testShouldRegister()
     {
         $test = $this;
 
@@ -36,18 +25,10 @@ class ElephantServiceProviderTest extends PHPUnit_Framework_TestCase
         $config = m::mock('Illuminate\Config\Repository');
         $config->shouldReceive('get')
                ->once()
-               ->with('laravel-elephantio::config')
+               ->with('elephant-io')
                ->andReturn(array('url' => $url, 'port' => $port, 'debug' => $debug));
 
         $elephant = m::mock('ElephantIO\Client');
-        $elephant->shouldReceive('init')
-                 ->once()
-                 ->withNoArgs()
-                 ->andReturn($elephant);
-                 
-        $elephant->shouldReceive('close')
-                 ->once()
-                 ->withNoArgs();
 
         //LaravelApp
         $app = m::mock('ArrayAccess');
@@ -63,22 +44,22 @@ class ElephantServiceProviderTest extends PHPUnit_Framework_TestCase
             ->andReturn($elephant);
 
         $sp = new ElephantServiceProvider($app);
-        
-        $app->shouldReceive('bind')
+
+        $app->shouldReceive('singleton')
             ->once()
             ->andReturnUsing(
                 // Make sure that the commands are being registered
                 // with a closure that returns the correct
                 // object.
                 function ($name, $closure) use ($test, $app) {
-                    
+
                     $shouldBe = ['elephant.io' => 'ElephantIO\Client'];
 
                     $test->assertInstanceOf($shouldBe[$name], $closure($app));
                 }
             );
 
-        $app->shouldReceive('bind')
+        $app->shouldReceive('singleton')
             ->once()
             ->andReturnUsing(
                 // Make sure that the commands are being registered

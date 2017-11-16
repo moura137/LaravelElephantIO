@@ -17,32 +17,30 @@ In the `require` key of `composer.json` file add the following
 
     "moura137/laravel-elephantio": "~1.0"
 
-Run the Composer update comand
+or
 
-    $ composer update
+Require this package with composer:
+
+    composer require moura137/laravel-elephantio
+
 
 In your `config/app.php` add `'Moura137\LaravelElephant\ElephantServiceProvider'` to the end of the `$providers` array
 
 ```php
-'providers' => array(
-
-    'Illuminate\Foundation\Providers\ArtisanServiceProvider',
-    'Illuminate\Auth\AuthServiceProvider',
+'providers' => [
     ...
-    'Moura137\LaravelElephant\ElephantServiceProvider',
+    Moura137\LaravelElephant\ElephantServiceProvider::class,
 
-),
+],
 ```
 
-At the end of `config/app.php` add `'Elephant'    => 'Moura137\LaravelElephant\ElephantFacade'` to the `$aliases` array
+At the end of `config/app.php` add `'Elephant' => 'Moura137\LaravelElephant\ElephantFacade'` to the `$aliases` array
 
 ```php
 'aliases' => array(
 
-    'App'        => 'Illuminate\Support\Facades\App',
-    'Artisan'    => 'Illuminate\Support\Facades\Artisan',
     ...
-    'Elephant'    => 'Moura137\LaravelElephant\ElephantFacade',
+    'Elephant'    => Moura137\LaravelElephant\ElephantFacade::class,
 
 ),
 ```
@@ -52,7 +50,7 @@ At the end of `config/app.php` add `'Elephant'    => 'Moura137\LaravelElephant\E
 Publish config using artisan CLI.
 
 ~~~
-php artisan config:publish moura137/laravel-elephantio
+php artisan vendor:publish --provider="Moura137\LaravelElephant\ElephantServiceProvider"
 ~~~
 
 ### Usage
