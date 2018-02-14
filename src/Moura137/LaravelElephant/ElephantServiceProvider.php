@@ -3,6 +3,7 @@ namespace Moura137\LaravelElephant;
 
 use ElephantIO\Client;
 use ElephantIO\Engine\SocketIO\Version1X;
+use ElephantIO\Engine\SocketIO\Version2X;
 use Moura137\LaravelElephant\LaraElephantIO;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 
@@ -33,7 +34,12 @@ class ElephantServiceProvider extends BaseServiceProvider
 
             $options = array('debug' => $config['debug']);
 
-            return new Client(new Version1X($config['url'], $options));
+            if (isset($config['version']) && $config['version'] === 2) {
+                return new Client(new Version2X($config['url'], $options));
+            }
+            else {
+                return new Client(new Version1X($config['url'], $options));
+            }
         });
 
         $this->app->singleton('laravel.elephantio', function($app){
